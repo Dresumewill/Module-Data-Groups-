@@ -54,6 +54,9 @@ it("given decimal numbers, returns the largest decimal", () => {
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+it("ignores non-numeric values and returns the max number", () => {
+    expect(findMax(["hey", 10, "how", 50, 15])).toBe(50);
+});
 
 // Given an array with only non-number values
 // When passed to the max function
