@@ -26,6 +26,9 @@ describe("findMax", () => {
 // Given an array with one number
 // When passed to the max function
 // Then it should return that number
+it("given an array with one number, returns that number", () => {
+    expect(findMax([5])).toBe(5);
+});
 
 // Given an array with both positive and negative numbers
 // When passed to the max function
