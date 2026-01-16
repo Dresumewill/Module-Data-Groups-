@@ -37,6 +37,9 @@ it("given an array with negative numbers, returns the correct sum", () => {
 // Given an array with decimal/float numbers
 // When passed to the sum function
 // Then it should return the correct total sum
+it("given decimal numbers, returns the correct sum", () => {
+    expect(sum([1.5, 2.25, 0.25])).toBe(4);
+  });
 
 // Given an array containing non-number values
 // When passed to the sum function
