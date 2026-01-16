@@ -44,6 +44,9 @@ it("given decimal numbers, returns the correct sum", () => {
 // Given an array containing non-number values
 // When passed to the sum function
 // Then it should ignore the non-numerical values and return the sum of the numerical elements
+it("ignores non-numeric values and sums only numbers", () => {
+    expect(sum(["hey", 10, "hi", 60, 10])).toBe(80);
+  });
 
 // Given an array with only non-number values
 // When passed to the sum function
