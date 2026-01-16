@@ -62,6 +62,6 @@ it("ignores non-numeric values and returns the max number", () => {
 // When passed to the max function
 // Then it should return the least surprising value given how it behaves for all other inputs
 
-it("given an empty array, returns null", () => {
-    expect(findMax([])).toBe(null);
+it("given only non-numeric values, returns null", () => {
+    expect(findMax(["a", "b", {}, []])).toBe(null);
 });
