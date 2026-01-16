@@ -17,6 +17,11 @@ const findMax = require("./max.js");
 // Then it should return -Infinity
 // Delete this test.todo and replace it with a test.
 // test.todo("given an empty array, returns -Infinity");
+describe("findMax", () => {
+    it("given an empty array, returns null", () => {
+        expect(findMax([])).toBe(null);
+    });
+})
 
 // Given an array with one number
 // When passed to the max function
