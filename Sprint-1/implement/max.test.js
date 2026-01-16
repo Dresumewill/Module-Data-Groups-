@@ -33,17 +33,23 @@ it("given an array with one number, returns that number", () => {
 // Given an array with both positive and negative numbers
 // When passed to the max function
 // Then it should return the largest number overall
-it("geven positive and negative numbers, returns the largest number", () => {
+it("given positive and negative numbers, returns the largest number", () => {
     expect(findMax([-10, 0, 25, -3, 7])).toBe(25);
 });
 
 // Given an array with just negative numbers
 // When passed to the max function
 // Then it should return the closest one to zero
+it("given only negative numbers, returns the closest to zero", () => {
+    expect(findMax([-50, -10, -3, -20])).toBe(-3);
+});
 
 // Given an array with decimal numbers
 // When passed to the max function
 // Then it should return the largest decimal number
+it("given decimal numbers, returns the largest decimal", () => {
+    expect(findMax([1.5, 2.75, 2.74])).toBe(2.75);
+});
 
 // Given an array with non-number values
 // When passed to the max function
