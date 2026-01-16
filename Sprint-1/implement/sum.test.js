@@ -23,6 +23,9 @@ describe("sum", () => {
 // Given an array with just one number
 // When passed to the sum function
 // Then it should return that number
+it("given an array with one number, returns that number", () => {
+    expect(sum([6])).toBe(6)
+})
 
 // Given an array containing negative numbers
 // When passed to the sum function
