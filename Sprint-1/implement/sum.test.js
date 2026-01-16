@@ -14,6 +14,11 @@ const sum = require("./sum.js");
 // When passed to the sum function
 // Then it should return 0
 // test.todo("given an empty array, returns 0")
+describe("sum", () => {
+    it("given an empty array, returns 0", () => {
+        expect(sum([])).toBe(0);
+    });
+})
 
 // Given an array with just one number
 // When passed to the sum function
