@@ -25,4 +25,8 @@ test("parses multiple key-value pairs", () => {
   });
 });
 
-
+test("handles keys without values", () => {
+  expect(parseQueryString("name=")).toEqual({
+    "name": "",
+  });
+});
