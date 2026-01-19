@@ -10,3 +10,10 @@ test("parses querystring values containing =", () => {
     "equation": "x=y+1",
   });
 });
+
+// Additional test cases
+
+test("returns and empty object for an empty string", () => {
+  expect(parseQueryString("")).toEqual({});
+});
+
