@@ -20,6 +20,13 @@ describe("tally", () => {
 // Given a function called tally
 // When passed an array of items
 // Then it should return an object containing the count for each unique item
+it("counts unique items correctly", () => {
+    expect(tally(["a", "b", "a", "c", "b", "a", "c"])).toEqual({
+        a: 3,
+        b: 2,
+        c: 2,
+    });
+});
 
 // Given an empty array
 // When passed to tally
@@ -40,3 +47,6 @@ it("counts duplicate items correctly", () => {
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+it("throws an error for invalid input", () => {
+    expect(() => tally("invalid")).toThrow("Input must be an array");
+});
