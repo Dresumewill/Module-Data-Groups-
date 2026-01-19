@@ -17,3 +17,12 @@ test("returns and empty object for an empty string", () => {
   expect(parseQueryString("")).toEqual({});
 });
 
+test("parses multiple key-value pairs", () => {
+  expect(parseQueryString("a=1&b=2&c=3")).toEqual({
+    "a": "1",
+    "b": "2",
+    "c": "3",
+  });
+});
+
+
