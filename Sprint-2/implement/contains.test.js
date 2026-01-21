@@ -16,6 +16,9 @@ as the object doesn't contains a key of 'c'
 // Given a contains function
 // When passed an object and a property name
 // Then it should return true if the object contains the property, false otherwise
+it("is a function", () => {
+    expect(typeof contains).toBe("function");
+});
 
 // Given an empty object
 // When passed to contains
