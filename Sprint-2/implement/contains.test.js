@@ -42,3 +42,6 @@ it("returns false when the object does not contain the property", () => {
 // Given invalid parameters like an array
 // When passed to contains
 // Then it should return false or throw an error
+it("returns false for invalid input like an array", () => {
+    expect(contains([], "a")).toBe(false);
+});
