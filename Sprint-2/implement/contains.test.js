@@ -28,7 +28,9 @@ it("returns false for an empty object", () => {
 // Given an object with properties
 // When passed to contains with an existing property name
 // Then it should return true
-
+it("returns true when the object contains the property", () => {
+    expect(contains({ a: 1, b: 2, c: 3 }, "b")).toBe(true);
+});
 
 // Given an object with properties
 // When passed to contains with a non-existent property name
