@@ -35,6 +35,9 @@ it("returns true when the object contains the property", () => {
 // Given an object with properties
 // When passed to contains with a non-existent property name
 // Then it should return false
+it("returns false when the object does not contain the property", () => {
+    expect(contains({ a: 1, b: 2, c: 3 }, "d")).toBe(false);
+});
 
 // Given invalid parameters like an array
 // When passed to contains
