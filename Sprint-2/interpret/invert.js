@@ -6,7 +6,7 @@
 
 // E.g. invert({x : 10, y : 20}), target output: {"10": "x", "20": "y"}
 
-function invert(obj) {
+/* function invert(obj) {
   const invertedObj = {};
 
   for (const [key, value] of Object.entries(obj)) {
@@ -14,7 +14,7 @@ function invert(obj) {
   }
 
   return invertedObj;
-}
+} */
 
 // a) What is the current return value when invert is called with { a : 1 }
 console.log(invert({ a: 1 })); // { key: 1 }
@@ -39,3 +39,18 @@ console.log(Object.entries({ a: 1, b: 2 }));
 // which is necessary for swapping them in the inverted object.
 
 // e) Fix the implementation of invert (and write tests to prove it's fixed!)
+function invert(obj) {
+  const invertedObj = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    invertedObj[value] = key;
+  }
+
+  return invertedObj;
+}
+
+// Test cases
+console.log(invert({ a: 1 })); // { '1': 'a' }
+console.log(invert({ a: 1, b: 2 })); // { '1': 'a', '2': 'b' }
+
+module.exports = invert;
