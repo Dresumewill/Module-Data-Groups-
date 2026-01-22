@@ -26,9 +26,13 @@ console.log(invert({ a: 1, b: 2 })); // { key: 2 }
 console.log({ 
   "1": "a", 
   "2": "b" 
-});
+}); 
+// { '1': 'a', '2': 'b' }
 
 // c) What does Object.entries return? Why is it needed in this program?
+// Object.entries returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
+console.log(Object.entries({ a: 1, b: 2 })); 
+// [ [ 'a', 1 ], [ 'b', 2 ] ]
 
 // d) Explain why the current return value is different from the target output
 
