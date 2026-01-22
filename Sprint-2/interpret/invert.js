@@ -35,5 +35,7 @@ console.log(Object.entries({ a: 1, b: 2 }));
 // [ [ 'a', 1 ], [ 'b', 2 ] ]
 
 // d) Explain why the current return value is different from the target output
+// It allows us to iterate over both keys and values at the same time, 
+// which is necessary for swapping them in the inverted object.
 
 // e) Fix the implementation of invert (and write tests to prove it's fixed!)
