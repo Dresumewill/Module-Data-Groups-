@@ -7,9 +7,17 @@ test("creates a country currency code lookup for multiple codes", () => {
     ['CA', 'CAD'],
   ];
 
-  // When createlookup is called with the country-currency array
+  // When createLookup is called with the country-currency array
   const result = createLookup(countryCurrencyPairs);
 
+  // Then
+ // - It should return an object where:
+ // - The keys are the country codes
+ // - The values are the corresponding currency codes
+ expect(result).toEqual({
+  US: 'USD',
+  CA: 'CAD',
+ })
 
 })
 
