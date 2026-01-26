@@ -7,7 +7,10 @@ test("creates a country currency code lookup for multiple codes", () => {
     ['CA', 'CAD'],
   ];
 
-  
+  // When createlookup is called with the country-currency array
+  const result = createLookup(countryCurrencyPairs);
+
+
 })
 
 /*
