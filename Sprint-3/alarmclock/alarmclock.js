@@ -1,4 +1,16 @@
-function setAlarm() {}
+let timerId = null
+
+function setAlarm() {
+  const input = document.getElementById("alarmSet");
+  const heading = document.getElementById("timeRemaining");
+
+  let totalSeconds = Number(input.value);
+
+  // Clear any existing timer
+  if (timerId) {
+    clearInterval(timerId);
+  }
+}
 
 // DO NOT EDIT BELOW HERE
 
