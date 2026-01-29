@@ -22,7 +22,18 @@ function updateDisplay(seconds) {
   heading.innerText = 'Time Remaining: ${mm:${ss}';
 }
 
+// Initial display
+updateDisplay(totalSeconds);
 
+timeId = setInterval(() => {
+  totalSeconds--;
+
+  updateDisplay(totalSeconds);
+  if (totalSeconds <= 0) {
+    clearInterval(timerId);
+    playAlarm();
+  }
+}, 1000);
 
 // DO NOT EDIT BELOW HERE
 
