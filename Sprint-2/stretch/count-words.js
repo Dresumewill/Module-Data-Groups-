@@ -5,9 +5,24 @@
     - takes a string as an argument
     - returns an object where
           - the keys are the words from the string and
-          - the values are the number of times the word appears in the string
+          - the values are the number of times the word appears in the string */
 
-  Example
+  function countWords(text) {
+  const words = text.split(" ");
+  const result = {};
+
+  for (const word of words) {
+    if (result[word]) {
+      result[word] += 1;
+    } else {
+      result[word] = 1;
+    }
+  }
+
+  return result;
+}
+
+  /* Example
   If we call countWords like this:
 
   countWords("you and me and you") then the target output is { you: 2, and: 2, me: 1 }
