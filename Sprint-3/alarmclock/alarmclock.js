@@ -1,39 +1,34 @@
-let timerId = null
+let timerId = null;
+let totalSeconds = 0;
+
+const heading = document.getElementById("timeRemaining");
 
 function setAlarm() {
-  const input = document.getElementById("alarmSet");
-  const heading = document.getElementById("timeRemaining");
+  let alarmSetTime = document.getElementById("alarmSet").value;
+  renderTime(alarmSetTime);
 
-  let totalSeconds = Number(input.value);
+  let interval = setInterval(() => {
+    alarmSetTime -= 1;
+    renderTime(alarmSetTime);
 
-  // Clear any existing timer
-  if (timerId) {
-    clearInterval(timerId);
-  }
+    if (alarmSetTime <= 0) {
+      playAlarm();
+      clearInterval(interval);
+    }
+  }, 1000);
 }
 
-function updateDisplay(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
+function renderTime(totalSeconds) {
+  const title = document.getElementById("timeRemaining");
 
-  const mm = String(minutes).padStart(2, "0");
-  const ss = String(remainingSeconds).padStart(2, "0");
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
 
-  heading.innerText = 'Time Remaining: ${mm:${ss}';
+  const mm = minutes.toString().padStart(2, "0");
+  const ss = seconds.toString().padStart(2, "0");
+
+  title.innerText = `Time Remaining: ${mm}:${ss}`;
 }
-
-// Initial display
-updateDisplay(totalSeconds);
-
-timeId = setInterval(() => {
-  totalSeconds--;
-
-  updateDisplay(totalSeconds);
-  if (totalSeconds <= 0) {
-    clearInterval(timerId);
-    playAlarm();
-  }
-}, 1000);
 
 // DO NOT EDIT BELOW HERE
 
