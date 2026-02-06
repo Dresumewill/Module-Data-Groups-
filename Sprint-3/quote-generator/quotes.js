@@ -7,6 +7,17 @@
 // variables tha was declared with keyword var
 
 // DOM -> Document objects model. it is a object
+// DRY -> Don't Repeat Yourself
+// CSS -> Cascade Style Sheet
+// Refactor
+
+function selectElementById(id) {
+  return document.getElementById(id);
+}
+
+function changeContentOf (HTMLElement, newValue) {
+  HTMLElement.textContent = newValue
+}
 
 function testingCode() {
 
@@ -15,18 +26,22 @@ let content = pickFromArray(quotes); //this function is returnig a quote object
 
 // we catch the paragraphs
 const quoteParagraph = document.getElementById("quote");
-quoteParagraph.textContent = content.quote;
+changeContentOf(quoteParagraph, content.quote)
+// quoteParagraph.textContent = content.quotes;
 
 const authorParagraph = document.getElementById("author");
-authorParagraph.textContent = content.author;
+changeContentOf(authorParagraph, content.author)
+// authorParagraph.textContent = content.author;
 
-const btn = document.getElementById("new-quote");
+const btn = selectElementById("new-quote");
 
 // we have to handle the click event using event listeners
 btn.addEventListener("click", function (event) {
   const newContent = pickFromArray(quotes)
-  quoteParagraph.textContent = newContent.quote;
-  authorParagraph.textContent = newContent.author;
+  changeContentOf(quoteParagraph, newContent.quote)
+  changeContentOf(authorParagraph, newContent.author)
+  // quoteParagraph.textContent = newContent.quote;
+  // authorParagraph.textContent = newContent.author;
 });
 
 }
