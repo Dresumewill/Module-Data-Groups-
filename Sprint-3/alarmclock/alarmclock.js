@@ -52,33 +52,6 @@ function renderTime(timeInSeconds) {
   title.innerText = `Time Remaining: ${mm}:${ss}`;
 }
 
-/* function setAlarm() {
-  let alarmSetTime = document.getElementById("alarmSet").value;
-  renderTime(alarmSetTime);
-
-  let interval = setInterval(() => {
-    alarmSetTime -= 1;
-    renderTime(alarmSetTime);
-
-    if (alarmSetTime <= 0) {
-      playAlarm();
-      clearInterval(interval);
-    }
-  }, 1000);
-} */
-
-/*function renderTime(totalSeconds) {
-  const title = document.getElementById("timeRemaining");
-
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-
-  const mm = minutes.toString().padStart(2, "0");
-  const ss = seconds.toString().padStart(2, "0");
-
-  title.innerText = `Time Remaining: ${mm}:${ss}`;
-} */
-
 // DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");
@@ -102,7 +75,7 @@ function setup() {
 function stopAlarm() {
   clearInterval(timerId);
   pauseAlarm();
-  document.body.classList.remove("alarm-flashing");
+  document.body.classList.remove("alarm-flashing")
 }
 
 function playAlarm() {
