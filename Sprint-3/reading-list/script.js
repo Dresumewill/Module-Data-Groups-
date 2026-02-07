@@ -44,5 +44,17 @@ function readingList(books) {
     
     const author = document.createElement("p");
     author.textContent = `by ${book.author}`;
+
+    // Create Image
+    const img = document.createElement("img");
+    img.src = booke.bookCoverImage;
+    img.alt = book.title;
+
+    // Append element to list item
+    li.append(title, author, img);
+
+    li.append(li);
   })
 }
+
+readingList(books);
