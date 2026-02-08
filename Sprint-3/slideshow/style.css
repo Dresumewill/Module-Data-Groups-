@@ -21,3 +21,17 @@ h1 {
     margin-bottom: 0.5rem;
     color: #eae5e5;
 }
+
+/* Carousel image */
+#carousel-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+#carousel-img:hover {
+    transform: scale(1.05);
+}
