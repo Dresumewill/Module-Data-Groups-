@@ -40,3 +40,17 @@ function prevImage() {
 
 forwardBtn.addEventListener("click", nextImage);
 backwardBtn.addEventListener("click", prevImage);
+
+function startAutoForward() {
+    autoForwardBtn.disabled = true;
+    autoBackBtn.disabled = true;
+
+    timer = setInterval(nextImage, getDelay());
+}
+
+function startAutoBackward() {
+    autoForwardBtn.disabled = true;
+    autoBackBtn.disabled = true;
+
+    timer = setInterval(prevImage, getDelay());
+}
