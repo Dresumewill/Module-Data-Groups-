@@ -54,3 +54,21 @@ function startAutoBackward() {
 
     timer = setInterval(prevImage, getDelay());
 }
+
+function stopAuto() {
+    clearInterval(timer);
+    timer = null;
+    autoForwardBtn.disabled = false;
+autoBackBtn.disabled = false;
+}
+
+if (autoForwardBtn) autoForwardBtn.addEventListener("click", startAutoForward);
+if (autoBackBtn) autoBackBtn.addEventListener("click", startAutoBackward);
+if (stopBtn) stopBtn.addEventListener("click", stopAuto);
+if (delayInput) {
+    delayInput.addEventListener("change", () => {
+        if (timer) {
+            stopAuto();
+        }
+    });
+}
