@@ -6,3 +6,37 @@ const images = [
 
 
 // Write your code here
+const img = document.getElementById("carousel-img");
+const forwardBtn = document.getElementById("forward-btn");
+const backwardBtn = document.getElementById("backward-btn");
+const autoForwardBtn = document.getElementById("auto-forward");
+const autoBackBtn = document.getElementById("auto-backward");
+const stopBtn = document.getElementById("stop");
+const delayInput = document.getElementById("delay-time");
+
+let currentIndex = 0;
+let timer = null;
+
+function getDelay() {
+    let seconds = parseInt(delayInput?.value);
+    if (isNaN(seconds) || seconds < 1) seconds = 2;
+    return seconds * 1000;
+}
+
+// --- Level 1: manual controls ---
+function nextImage() {
+    currentIndex++;
+    if (currentIndex >= images.length) currentIndex = 0;
+    img.src = images[currentIndex];
+    return currentIndex; // useful for tests
+}
+
+function prevImage() {
+    currentIndex--;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    img.src = images[currentIndex];
+    return currentIndex;
+}
+
+forwardBtn.addEventListener("click", nextImage);
+backwardBtn.addEventListener("click", prevImage);
