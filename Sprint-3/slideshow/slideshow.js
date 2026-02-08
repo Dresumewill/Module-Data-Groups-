@@ -72,3 +72,15 @@ if (delayInput) {
         }
     });
 }
+
+// --- Export for tests ---
+if (typeof module !== "undefined") {
+    module.exports = {
+        nextImage,
+        prevImage,
+        startAutoForward,
+        startAutoBackward,
+        stopAuto,
+        images,
+    };
+}
