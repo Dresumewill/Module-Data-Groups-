@@ -24,3 +24,18 @@ form {
     max-width: 400px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
+/* Input */
+#todoInput {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #F8F3F3;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+#todoInput:focus {
+    outline: none;
+    border-color: #0D6EFD;
+}
