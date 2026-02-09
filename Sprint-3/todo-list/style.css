@@ -67,3 +67,12 @@ button {
 .btn-secondary:hover {
     background-color: #7eb494;
 }
+
+/* Todo list */
+#todo-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+}
