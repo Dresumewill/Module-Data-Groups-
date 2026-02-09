@@ -28,3 +28,14 @@ h1 {
   margin-bottom: 2rem;
   font-size: 2.2rem;
 }
+
+/* Reading list container */
+#reading-list {
+  list-style: none;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
