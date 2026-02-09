@@ -31,29 +31,24 @@ function readingList(books) {
   books.forEach((book) => {
     const li = document.createElement("li");
 
-    // Apply background color based on read status
-    if (book.alreadyRead) {
-      li.style.backgroundColor = "#d4edda"; // read
-    } else {
-      li.style.backgroundColor = "#f8d7da"; // unread
-    }
+    // Test colors is Required
+    li.style.backgroundColor = book.alreadyRead ? "green" : "red";
+
+    // Create Image
+    const img = document.createElement("img");
+    img.src = book.bookCoverImage;
 
     // Create title and author
     const title = document.createElement("h3");
     title.textContent = book.title;
     
     const author = document.createElement("p");
-    author.textContent = `by ${book.author}`;
-
-    // Create Image
-    const img = document.createElement("img");
-    img.src = booke.bookCoverImage;
-    img.alt = book.title;
+    author.textContent = book.author;
 
     // Append element to list item
-    li.append(title, author, img);
+    li.append(img, title, author,);
 
-    li.append(li);
+    list.append(li);
   })
 }
 
