@@ -13,7 +13,7 @@ function populateTodoList(todos) {
     span.textContent = todo.task;
 
     if (todo.completed) {
-      span.style.textDecoration = "line-through";
+      li.style.textDecoration = "line-through";
     }
 
     // Complete button
@@ -22,10 +22,8 @@ function populateTodoList(todos) {
     completeBtn.className = "btn btn-success btn-sm";
 
     completeBtn.addEventListener("click", () => {
-      span.style.textDecoration =
-        span.style.textDecoration === "line-through"
-          ? "none"
-          : "line-through";
+      todo.completed = !todo.completed;
+      populatedTodoList(todos);
     });
 
     // Delete button
@@ -34,7 +32,8 @@ function populateTodoList(todos) {
     deleteBtn.className = "btn btn-danger btn-sm";
 
     deleteBtn.addEventListener("click", () => {
-      li.remove();
+      todo.splice(index, 1);
+      populatedTodoList(todos);
     });
 
     // Append elements
