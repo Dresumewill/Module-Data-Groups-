@@ -66,3 +66,18 @@ function addNewTodo(event) {
   // Reset input field
   input.value = "";
 }
+
+// Delete all completed todos
+function deleteAllCompletedTodos() {
+  const listItems = document.querySelectorAll("#todo-list li");
+
+  listItems.forEach((li) => {
+    const span = li.querySelector("span");
+    if (span.style.textDecoration === "line-through") {
+      li.remove();
+    }
+  });
+
+  // Sync internal todos array
+  todos = todos.filter((todo) => !todo.completed);
+}
