@@ -64,3 +64,17 @@ h1 {
   margin-bottom: 1rem;
   background-color: white;
 }
+
+/* Book title */
+#reading-list h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Author */
+#reading-list p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
