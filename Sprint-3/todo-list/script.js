@@ -1,100 +1,81 @@
-function populateTodoList(todos) {
-  const list = document.getElementById("todo-list");
-
-  // Clear existing list (important for tests & re-rendering)
-  list.innerHTML = "";
-
-  todos.forEach((todo) => {
-    const li = document.createElement("li");
-    li.className = "list-group-item";
-
-    // Task text
-    const span = document.createElement("span");
-    span.textContent = todo.task;
-
-    if (todo.completed) {
-      li.style.textDecoration = "line-through";
-    }
-
-    // Complete button
-    const completeBtn = document.createElement("button");
-    completeBtn.innerHTML = '<i class="fa fa-check"></i>';
-    completeBtn.className = "btn btn-success btn-sm";
-
-    completeBtn.addEventListener("click", () => {
-      todo.completed = !todo.completed;
-      populatedTodoList(todos);
-    });
-
-    // Delete button
-    const deleteBtn = document.createElement("button");
-    deleteBtn.innerHTML = '<i class="fa fa-trash"></i>';
-    deleteBtn.className = "btn btn-danger btn-sm";
-
-    deleteBtn.addEventListener("click", () => {
-      todo.splice(index, 1);
-      populatedTodoList(todos);
-    });
-
-    // Append elements
-    li.append(span, completeBtn, deleteBtn);
-    list.appendChild(li);
-  });
-}
-
-// Initial todos
+// These are the initial todos
 let todos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
 ];
 
-populateTodoList(todos);
+const todoList = document.getElementById("todo-list");
+const todoInput = document.getElementById("todoInput");
+const todoForm = document.getElementById("todoForm");
+const removeAllCompletedBtn = document.getElementById("remove-all-completed");
+
+// Create one todo <li>
+function createTodoElement(todo) {
+  const li = document.createElement("li");
+
+  li.innerText = todo.task;
+
+  // Apply completed styling to LI (important for tests)
+  if (todo.completed) {
+    li.style.textDecoration = "line-through";
+  }
+
+  // Check icon
+  const checkIcon = document.createElement("i");
+  checkIcon.className = "fa fa-check";
+  checkIcon.style.marginLeft = "10px";
+  checkIcon.addEventListener("click", () => {
+    todo.completed = !todo.completed;
+    li.style.textDecoration = todo.completed ? "line-through" : "none";
+  });
+
+  // Trash icon
+  const trashIcon = document.createElement("i");
+  trashIcon.className = "fa fa-trash";
+  trashIcon.style.marginLeft = "10px";
+  trashIcon.addEventListener("click", () => {
+    li.remove();
+  });
+
+  li.appendChild(checkIcon);
+  li.appendChild(trashIcon);
+  todoList.appendChild(li);
+}
+
+// Populate initial list
+function populateTodoList(todos) {
+  todoList.innerHTML = "";
+  todos.forEach(createTodoElement);
+}
 
 // Add new todo
 function addNewTodo(event) {
   event.preventDefault();
 
-  const input = document.getElementById("todoInput");
-  const task = input.value.trim();
+  const taskText = todoInput.value.trim();
+  if (!taskText) return;
 
-  if (task === "") return;
+  const newTodo = { task: taskText, completed: false };
+  todos.push(newTodo);
+  createTodoElement(newTodo);
 
-  todos.push({ task, completed: false });
-  populateTodoList(todos);
-
-  // Reset input field
-  input.value = "";
+  todoInput.value = "";
 }
 
-// Delete all completed todos
+// Remove all completed todos
 function deleteAllCompletedTodos() {
-  const listItems = document.querySelectorAll("#todo-list li");
+  const items = Array.from(todoList.children);
 
-  listItems.forEach((li) => {
-    const span = li.querySelector("span");
-    if (span.style.textDecoration === "line-through") {
+  items.forEach((li) => {
+    if (li.style.textDecoration === "line-through") {
       li.remove();
     }
   });
-
-  // Sync internal todos array
-  todos = todos.filter((todo) => !todo.completed);
 }
 
 // Event listeners
-document
-  .getElementById("todoForm")
-  .addEventListener("submit", addNewTodo);
+todoForm.addEventListener("submit", addNewTodo);
+removeAllCompletedBtn.addEventListener("click", deleteAllCompletedTodos);
 
-document
-  .getElementById("remove-all-completed")
-  .addEventListener("click", deleteAllCompletedTodos);
-
-// Export for tests (Jest-safe)
-if (typeof module !== "undefined") {
-  module.exports = {
-    populateTodoList,
-    addNewTodo,
-    deleteAllCompletedTodos,
-  };
-}
+// Initial render
+populateTodoList(todos); 
