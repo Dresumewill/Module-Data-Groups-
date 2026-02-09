@@ -42,3 +42,27 @@ function populateTodoList(todos) {
     list.appendChild(li);
   });
 }
+
+// Initial todos
+let todos = [
+  { task: "Wash the dishes", completed: false },
+  { task: "Do the shopping", completed: false },
+];
+
+populateTodoList(todos);
+
+// Add new todo
+function addNewTodo(event) {
+  event.preventDefault();
+
+  const input = document.getElementById("todoInput");
+  const task = input.value.trim();
+
+  if (task === "") return;
+
+  todos.push({ task, completed: false });
+  populateTodoList(todos);
+
+  // Reset input field
+  input.value = "";
+}
