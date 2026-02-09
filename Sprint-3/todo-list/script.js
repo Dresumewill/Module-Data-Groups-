@@ -81,3 +81,21 @@ function deleteAllCompletedTodos() {
   // Sync internal todos array
   todos = todos.filter((todo) => !todo.completed);
 }
+
+// Event listeners
+document
+  .getElementById("todoForm")
+  .addEventListener("submit", addNewTodo);
+
+document
+  .getElementById("remove-all-completed")
+  .addEventListener("click", deleteAllCompletedTodos);
+
+// Export for tests (Jest-safe)
+if (typeof module !== "undefined") {
+  module.exports = {
+    populateTodoList,
+    addNewTodo,
+    deleteAllCompletedTodos,
+  };
+}
