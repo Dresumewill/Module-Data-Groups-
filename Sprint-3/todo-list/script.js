@@ -27,3 +27,18 @@ function populateTodoList(todos) {
           ? "none"
           : "line-through";
     });
+
+    // Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = '<i class="fa fa-trash"></i>';
+    deleteBtn.className = "btn btn-danger btn-sm";
+
+    deleteBtn.addEventListener("click", () => {
+      li.remove();
+    });
+
+    // Append elements
+    li.append(span, completeBtn, deleteBtn);
+    list.appendChild(li);
+  });
+}
