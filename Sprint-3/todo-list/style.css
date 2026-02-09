@@ -106,3 +106,8 @@ button {
 #todo-list i:hover {
     opacity: 0.7;
 }
+
+/* Completed todo */
+#todo-list li[style*="line-through"] {
+    opacity: 0.6;
+}
