@@ -88,3 +88,21 @@ button {
     justify-content: space-between;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
+/* Icons */
+#todo-list i {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#todo-list i.fa-check {
+    color: #085a31;
+}
+
+#todo-list i.fa-trash {
+    color: #c60c1f;
+}
+
+#todo-list i:hover {
+    opacity: 0.7;
+}
