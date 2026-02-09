@@ -76,3 +76,15 @@ button {
     width: 100%;
     max-width: 400px;
 }
+
+/* Individual todo item */
+#todo-list li {
+    background: white;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
