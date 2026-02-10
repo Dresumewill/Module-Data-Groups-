@@ -12,7 +12,7 @@ const removeAllCompletedBtn = document.getElementById("remove-all-completed");
 // Create one todo <li>
 function createTodoElement(todo) {
   const li = document.createElement("li");
-
+ 
   li.innerText = todo.task;
 
   // Apply completed styling to LI (important for tests)
