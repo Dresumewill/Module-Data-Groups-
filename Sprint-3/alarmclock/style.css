@@ -1,3 +1,14 @@
+/* Animation for the flashing background */
+@keyframes flash-red {
+  0% { background-color: #ffffff; }
+  50% {background-color: #c10808; }
+  100% { background-color: #ffffff; }
+}
+
+.alarm-flashing {
+  animation: flash-red 0.5s infinite;
+}
+
 .centre {
   position: fixed;
   top: 50%;
@@ -12,4 +23,4 @@
 
 h1 {
   text-align: center;
-}
+} 

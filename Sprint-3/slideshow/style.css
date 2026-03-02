@@ -1,1 +1,77 @@
 /** Write your CSS in here **/
+/* Reset / base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #8d566c, #6fa6c0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 0.5rem;
+    color: #eae5e5;
+}
+
+/* Carousel image */
+#carousel-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(100, 90, 55, 0.15);
+    transition: transform 0.3s ease;
+}
+
+#carousel-img:hover {
+    transform: scale(1.05);
+}
+
+/* Button layout */
+button {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #9f4f74;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(191, 150, 99, 0.15);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #70485a;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Group spacing */
+#backward-btn,
+#forward-btn {
+    margin: 0 0.25rem;
+}
+
+#auto-backward,
+#auto-forward,
+#stop {
+    background-color: #5c7fa3;
+}
+
+#auto-backward:hover,
+#auto-forward:hover,
+#stop:hover {
+    background-color: #5FA8FF;
+}

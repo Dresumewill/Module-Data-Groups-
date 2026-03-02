@@ -1,1 +1,71 @@
 /** Write your CSS in here **/
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Styling the card */
+.container {
+    background: rgba(224, 229, 233, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 85%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+}
+
+#quote {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+#author {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+#author::before {
+    content: "— ";
+}
+
+#new-quote {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+#new-quote:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+#new-quote:active {
+    transform: translateY(0);
+}

@@ -1,1 +1,113 @@
+/* Reset + base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+body {
+    background-color: #f2d3b0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+/* Main container effect */
+form {
+    background: #dcf0a5;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(82, 77, 77, 0.1);
+}
+
+/* Input */
+#todoInput {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #98b65b;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+#todoInput:focus {
+    outline: none;
+    border-color: #085a31;
+}
+
+/* Buttons */
+button {
+    padding: 10px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.btn-primary {
+    background-color: #085a31;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #58850f;
+}
+
+.btn-secondary {
+    background-color: #6c7d74;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7eb494;
+}
+
+/* Todo list */
+#todo-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Individual todo item */
+#todo-list li {
+    background: white;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Icons */
+#todo-list i {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#todo-list i.fa-check {
+    color: #085a31;
+}
+
+#todo-list i.fa-trash {
+    color: #c60c1f;
+}
+
+#todo-list i:hover {
+    opacity: 0.7;
+}
+
+/* Completed todo */
+#todo-list li[style*="line-through"] {
+    opacity: 0.6;
+}

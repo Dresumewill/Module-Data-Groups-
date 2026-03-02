@@ -21,3 +21,35 @@ const books = [
   },
 ];
 
+// Main function to render the reading list
+function readingList(books) {
+  const list = document.getElementById("reading-list");
+
+  // Clear existing content important for tests and re-rendering
+  list.innerHTML = "";
+
+  books.forEach((book) => {
+    const li = document.createElement("li");
+
+    // Test colors is Required
+    li.style.backgroundColor = book.alreadyRead ? "green" : "red";
+
+    // Create Image
+    const img = document.createElement("img");
+    img.src = book.bookCoverImage;
+
+    // Create title and author
+    const title = document.createElement("h3");
+    title.textContent = book.title;
+    
+    const author = document.createElement("p");
+    author.textContent = book.author;
+
+    // Append element to list item
+    li.append(img, title, author,);
+
+    list.append(li);
+  })
+}
+
+readingList(books);

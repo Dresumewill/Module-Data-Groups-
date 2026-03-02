@@ -1,3 +1,51 @@
+// HOISTING in javascript? the hoisting move to the top functions var..
+// js has a engine called V8
+// v8 compile your code when this engine is compiling your
+// whe v8 see that you create a function v8 move that function to the top of your code
+// to use that function like a global function.
+// the that you get a name could be arbitrary
+// variables tha was declared with keyword var
+
+// DOM -> Document objects model. it is a object
+// DRY -> Don't Repeat Yourself
+// CSS -> Cascade Style Sheet
+// Refactor
+
+function selectElementById(id) {
+  return document.getElementById(id);
+}
+
+function changeContentOf (HTMLElement, newValue) {
+  HTMLElement.textContent = newValue
+}
+
+function testingCode() {
+
+// we need to print in the console the quote value (it's key)
+let content = pickFromArray(quotes); //this function is returnig a quote object
+
+// we catch the paragraphs
+const quoteParagraph = document.getElementById("quote");
+changeContentOf(quoteParagraph, content.quote)
+// quoteParagraph.textContent = content.quotes;
+
+const authorParagraph = document.getElementById("author");
+changeContentOf(authorParagraph, content.author)
+// authorParagraph.textContent = content.author;
+
+const btn = selectElementById("new-quote");
+
+// we have to handle the click event using event listeners
+btn.addEventListener("click", function (event) {
+  const newContent = pickFromArray(quotes)
+  changeContentOf(quoteParagraph, newContent.quote)
+  changeContentOf(authorParagraph, newContent.author)
+  // quoteParagraph.textContent = newContent.quote;
+  // authorParagraph.textContent = newContent.author;
+});
+
+}
+
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
@@ -491,3 +539,4 @@ const quotes = [
 ];
 
 // call pickFromArray with the quotes array to check you get a random quote
+testingCode()
